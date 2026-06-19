@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+main_debug
 # Object files
 *.o
 *.ko
