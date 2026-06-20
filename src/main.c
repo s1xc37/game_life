@@ -20,7 +20,7 @@ int main(void) {
     int steps = 0;
     scanf("%d", &steps);
     for(size_t i = 0; i <= steps; i++) {
-        printf("\n---\nframe: %d\n---\n", i);
+        printf("\n---\nframe: %zu\n---\n", i);
         field_output(field_1, m, n);
         field_update(field_1, field_2, m, n);
         bool **t = field_1; field_1 = field_2; field_2 = t;
@@ -69,6 +69,7 @@ void field_update(bool** data, bool** data2, size_t m, size_t n) {
     for (size_t i = 0; i < n; i++) {
         for (size_t j = 0; j < m; j++) {
             int neighboors_qty = get_neighboors_qty(data, m, n, i, j);
+            data2[i][j] = false;
             if(neighboors_qty == 3 && data[i][j] == false) {
                 data2[i][j] = true;
             }
